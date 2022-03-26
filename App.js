@@ -1,12 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
 import {Provider} from 'react-redux';
+import HomeScreen from './screens/HomeScreen';
+import { store } from './store';
 //Set up redux
 
 export default function App() {
+ //Provider makes redux accessible to surrounded components
   return (
-    <View style={styles.container}>
-      <Text>Let's build uber</Text>
-    </View>
+    
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
+    
   );
 }
 
